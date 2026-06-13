@@ -72,6 +72,8 @@ Unity 6000.3.9f1 LTS
 - Correct placement sound
 - Wrong placement sound
 - Completion sound
+- Pickup sound
+- UI Button sound
 
 ---
 
