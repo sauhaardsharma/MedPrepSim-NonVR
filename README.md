@@ -1,4 +1,4 @@
-# MedPrepSim — Medical Instrument Preparation Simulator (Non-VR)
+# MedPrepSim - Medical Instrument Preparation Simulator (Non-VR)
 
 A Unity-based interactive simulation of a surgical instrument preparation stage. The user identifies and places medical instruments into their designated slots on an instrument tray.
 
@@ -92,4 +92,4 @@ Unity 6000.3.9f1 LTS
 
 ## Known Limitations
 - VR mode not included in this build as VR Device was not available at the moment
-- Ghost color feedback relies on trigger colliders — very small or fast movements may occasionally miss trigger detection
+- Ghost color feedback relies on trigger colliders - very small or fast movements may occasionally miss trigger detection
