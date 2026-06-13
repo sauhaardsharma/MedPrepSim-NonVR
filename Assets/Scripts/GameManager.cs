@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public AudioClip correctPlacementClip;
     public AudioClip wrongPlacementClip;
     public AudioClip completionClip;
+    public AudioClip pickupClip;
 
     void Awake()
     {
@@ -40,6 +41,10 @@ public class GameManager : MonoBehaviour
 
         selectedInstrument = instrument;
         selectedInstrument.Highlight(true);
+
+        if (audioSource != null && pickupClip != null)
+            audioSource.PlayOneShot(pickupClip);
+
         UIManager.Instance.ShowInstrumentInfo(
             instrument.instrumentName,
             instrument.description,
@@ -123,12 +128,16 @@ public class GameManager : MonoBehaviour
             placedCount++;
             UIManager.Instance.UpdateProgress(placedCount, totalInstruments);
             UIManager.Instance.ShowFeedback(instrument.instrumentName + " Placed Successfully", true);
-            audioSource.PlayOneShot(correctPlacementClip);
+
+            if (audioSource != null && correctPlacementClip != null)
+                audioSource.PlayOneShot(correctPlacementClip);
+
             ResetAllSlotHighlights();
 
             if (placedCount >= totalInstruments)
             {
-                audioSource.PlayOneShot(completionClip);
+                if (audioSource != null && completionClip != null)
+                    audioSource.PlayOneShot(completionClip);
                 UIManager.Instance.ShowCompletion();
             }
         }
@@ -136,7 +145,10 @@ public class GameManager : MonoBehaviour
         {
             instrument.ReturnToOriginalPosition();
             UIManager.Instance.ShowFeedback("Incorrect Instrument. Please place in correct location.", false);
-            audioSource.PlayOneShot(wrongPlacementClip);
+
+            if (audioSource != null && wrongPlacementClip != null)
+                audioSource.PlayOneShot(wrongPlacementClip);
+
             ResetAllSlotHighlights();
         }
     }

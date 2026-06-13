@@ -91,4 +91,3 @@ Unity 6000.3.9f1 LTS
 ## Known Limitations
 - VR mode not included in this build as VR Device was not available at the moment
 - Ghost color feedback relies on trigger colliders — very small or fast movements may occasionally miss trigger detection
-- No audio for instrument selection or drag

@@ -3376,8 +3376,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1574166882}
   - {fileID: 1052087213}
+  - {fileID: 1574166882}
   - {fileID: 1623558880}
   - {fileID: 1421687111}
   m_Father: {fileID: 0}
@@ -4416,6 +4416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1421687111}
   - component: {fileID: 1421687110}
+  - component: {fileID: 1421687112}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -4535,6 +4536,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1135682951}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1421687112
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421687109}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1432869292 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6193760108387882193, guid: 235bf15a7eda2494b8e8598cc474bcfd, type: 3}
@@ -4868,6 +4966,9 @@ MonoBehaviour:
   lightingToggleButton: {fileID: 947678281}
   exitButton: {fileID: 10762499}
   lightingButtonText: {fileID: 1233306747}
+  uiAudioSource: {fileID: 1421687112}
+  hoverClip: {fileID: 8300000, guid: 93ece27ebaf0ad447a378996e7340dc3, type: 3}
+  clickClip: {fileID: 8300000, guid: dafdc19b7447c464ea4c60d7f852b66a, type: 3}
 --- !u!1 &1623558878
 GameObject:
   m_ObjectHideFlags: 0
@@ -4904,6 +5005,7 @@ MonoBehaviour:
   correctPlacementClip: {fileID: 8300000, guid: 97e8b0c9f210a264e8159ad9aeae3ccc, type: 3}
   wrongPlacementClip: {fileID: 8300000, guid: 98318ae7cc9532f46aee7997ac0fc8ea, type: 3}
   completionClip: {fileID: 8300000, guid: 7749b78b2be05eb45a6070d9cf137520, type: 3}
+  pickupClip: {fileID: 8300000, guid: 621c721431e74804390ab7cb865b626c, type: 3}
 --- !u!4 &1623558880
 Transform:
   m_ObjectHideFlags: 0
@@ -8257,7 +8359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7410673164109871618, guid: 16a7339bb48d8424a9326dc65afbe7d1, type: 3}
       propertyPath: cameraRotateSpeed
-      value: 80
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7823985967820452535, guid: 16a7339bb48d8424a9326dc65afbe7d1, type: 3}
       propertyPath: m_Name
